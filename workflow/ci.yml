@@ -23,4 +23,5 @@ jobs:
 - name: Install pytest
 run: pip instal pytest
 
--name: Run test
+-name: Run tests
+run: pytest
