@@ -46,6 +46,15 @@ jobs:
       - name: Run tests
         run: pytest
 
+      - name: Run tests
+        run: pytest --tb=short -q 2>&1 | tee test-output.txt
+
+      - name: Publish test report
+        if: always()
+        run: |
+         echo "### Test Results" >> $GITHUB_STEP_SUMMARY
+         cat test-output.txt >> $GITHUB_STEP_SUMMARY
+
   security:
     needs: test
     runs-on: ubuntu-latest
