@@ -55,7 +55,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker image
-        run: docker build -t devops-demo .
+        run: docker build -t sk-deneme .
 
       - name: Run application inside container
-        run: docker run devops-demo
+        run: docker run sk-deneme
